@@ -1,0 +1,119 @@
+# ============================================
+# CloudTrace - Git Ignore Rules
+# ============================================
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment variables (NEVER commit these!)
+.env
+.env.local
+.env.*.local
+*.env
+
+# But DO commit .env.example (template file)
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Build outputs
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# AWS and Cloud files
+.aws/
+*.pem
+*.key
+*.crt
+
+# Database files (if any local dumps)
+*.sql.backup
+*.dump
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+
+# Misc
+.cache/
+.temp/
+*.pid
+*.seed
+*.pid.lock
+
+# ============================================
+# Learning/Development Files (Keep Local Only)
+# ============================================
+# These files are for your learning but shouldn't be on GitHub
+
+# Learning documentation
+COMPLETE_SETUP_CHECKLIST.md
+PRE_GIT_CHECKLIST.md
+GIT_SETUP.md
+GIT_PUSH_GUIDE.md
+QUICK_START_SUMMARY.md
+SETUP_GUIDE.md
+ENV_SETUP.md
+GITHUB_VS_LOCAL.md
+AWS_COST_SAVING.md
+VIDEO_RECORDING_GUIDE.md
+REPOSITORY_STRUCTURE.md
+SCRIPTS_DECISION.md
+PROJECT_EXPLANATION_FOR_AI.md
+LINKEDIN_CONTENT.md
+ARCHITECTURE_DIAGRAM.txt
+PROJECT_EXPLANATION_FOR_AI.md
+CREATE_ARCHITECTURE_DIAGRAM.md
+FINAL_SUMMARY.md
+QUICKSTART.md
+
+
+# README.md should be on GitHub (removed from ignore)
+
+# Clean schema (learning file)
+db/schema_clean.sql
+
+# Temporary config files
+ENV_CONFIG.txt
+backend/ENV_CONFIG.txt
+
+# Best practices (optional - remove if you want to show it)
+# backend/BEST_PRACTICES.md

@@ -1,0 +1,69 @@
+# ============================================
+# Docker Compose for Local Development
+# ============================================
+# 
+# PURPOSE: Run entire stack locally with one command
+# 
+# USAGE:
+#   docker-compose up -d          # Start all services
+#   docker-compose down           # Stop all services
+#   docker-compose logs -f        # View logs
+# ============================================
+
+version: '3.8'
+
+services:
+  # ============================================
+  # PostgreSQL Database
+  # ============================================
+  database:
+    image: postgres:15-alpine
+    container_name: cloudtrace-db
+    environment:
+      POSTGRES_USER: cloudtrace
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: cloudtrace
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cloudtrace -d cloudtrace"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - cloudtrace-network
+
+  # ============================================
+  # Backend Server (Optional - can run locally)
+  # ============================================
+  # Uncomment to run backend in Docker too
+  # backend:
+  #   build:
+  #     context: ./backend
+  #     dockerfile: Dockerfile
+  #   container_name: cloudtrace-backend
+  #   environment:
+  #     PORT: 3000
+  #     DB_HOST: database
+  #     DB_USER: cloudtrace
+  #     DB_PASSWORD: password
+  #     DB_NAME: cloudtrace
+  #     DB_PORT: 5432
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     database:
+  #       condition: service_healthy
+  #   networks:
+  #     - cloudtrace-network
+
+volumes:
+  db_data:
+    driver: local
+
+networks:
+  cloudtrace-network:
+    driver: bridge

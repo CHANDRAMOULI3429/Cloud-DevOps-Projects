@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudTrace - Load Balanced Request Tracking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ============================================
+         HEADER SECTION
+         ============================================
+         Purpose: Title and brief explanation
+         ============================================ -->
+    <header>
+        <h1>☁️ CloudTrace</h1>
+        <p class="subtitle">Load Balanced Request Tracking System</p>
+        <p class="description">
+            Watch requests flow through ALB → EC2 instances → Database in real-time.
+            Each request shows which EC2 server handled it, proving load balancing works.
+        </p>
+    </header>
+
+    <!-- ============================================
+         ARCHITECTURE DIAGRAM
+         ============================================
+         Purpose: Visual explanation of request flow
+         Shows: User → ALB → EC2 → Database
+         ============================================ -->
+    <section class="architecture">
+        <h2>📊 Request Flow Architecture</h2>
+        <div class="flow-diagram">
+            <!-- User -->
+            <div class="flow-step">
+                <div class="flow-box user-box">
+                    <div class="icon">👤</div>
+                    <div class="label">User</div>
+                </div>
+                <div class="arrow">→</div>
+            </div>
+
+            <!-- ALB -->
+            <div class="flow-step">
+                <div class="flow-box alb-box">
+                    <div class="icon">⚖️</div>
+                    <div class="label">ALB</div>
+                    <div class="sub-label">Load Balancer</div>
+                </div>
+                <div class="arrow">→</div>
+            </div>
+
+            <!-- EC2 Instances -->
+            <div class="flow-step">
+                <div class="flow-box ec2-box">
+                    <div class="icon">🖥️</div>
+                    <div class="label">EC2 Instances</div>
+                    <div class="sub-label">Stateless Servers</div>
+                    <div class="server-list" id="serverList">
+                        <div class="server-item">Server 1</div>
+                        <div class="server-item">Server 2</div>
+                        <div class="server-item">Server 3</div>
+                    </div>
+                </div>
+                <div class="arrow">→</div>
+            </div>
+
+            <!-- Database -->
+            <div class="flow-step">
+                <div class="flow-box db-box">
+                    <div class="icon">💾</div>
+                    <div class="label">PostgreSQL</div>
+                    <div class="sub-label">Shared Database</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Explanation -->
+        <div class="architecture-explanation">
+            <h3>How It Works:</h3>
+            <ol>
+                <li><strong>User clicks button</strong> → Frontend sends HTTP request</li>
+                <li><strong>ALB receives request</strong> → Chooses one healthy EC2 instance (round-robin)</li>
+                <li><strong>EC2 handles request</strong> → Generates unique request ID, writes to database</li>
+                <li><strong>Database stores log</strong> → All requests logged with server hostname</li>
+                <li><strong>Response returned</strong> → Frontend displays which server handled it</li>
+            </ol>
+            <div class="key-concepts">
+                <h4>Key Concepts:</h4>
+                <ul>
+                    <li><strong>Stateless EC2:</strong> No local state, all data in database. Any instance can handle any request.</li>
+                    <li><strong>Load Balancing:</strong> ALB distributes requests across multiple EC2 instances.</li>
+                    <li><strong>Failure Handling:</strong> If one EC2 dies, ALB stops sending traffic to it. Others continue working.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTROL PANEL
+         ============================================
+         Purpose: Button to trigger requests
+         ============================================ -->
+    <section class="controls">
+        <h2>🎮 Control Panel</h2>
+        <div class="control-group">
+            <button id="sendRequestBtn" class="primary-btn">
+                Send Request
+            </button>
+            <button id="clearLogsBtn" class="secondary-btn">
+                Clear Logs
+            </button>
+            <div class="config">
+                <label>
+                    Backend URL:
+                    <input type="text" id="backendUrl" value="http://localhost:3000/api/request" placeholder="http://your-alb-url/api/request">
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         REQUEST LOGS
+         ============================================
+         Purpose: Display each request with details
+         Shows: Request ID, Server Hostname, Timestamp
+         ============================================ -->
+    <section class="logs">
+        <h2>📋 Request Logs</h2>
+        <div class="logs-header">
+            <div class="stats">
+                <span>Total Requests: <strong id="totalRequests">0</strong></span>
+                <span>Unique Servers: <strong id="uniqueServers">0</strong></span>
+            </div>
+        </div>
+        <div id="requestLogs" class="request-logs">
+            <div class="empty-state">
+                <p>No requests yet. Click "Send Request" to start tracking!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVER DISTRIBUTION
+         ============================================
+         Purpose: Visualize request distribution
+         Shows: How many requests each server handled
+         ============================================ -->
+    <section class="distribution">
+        <h2>📊 Request Distribution by Server</h2>
+        <div id="serverDistribution" class="distribution-chart">
+            <div class="empty-state">
+                <p>Send requests to see distribution across servers</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================
+         Purpose: Handle API calls and UI updates
+         ============================================ -->
+    <script src="app.js"></script>
+</body>
+</html>
+
