@@ -18,8 +18,8 @@ CloudTrace is a full-stack application that tracks HTTP requests through a load-
 User → ALB → EC2 Instances (Auto Scaling) → PostgreSQL (RDS)
 ```
 
-![Architecture Diagram](architecture-diagram.png)
-*Note: Add architecture-diagram.png to repository root for image to display*
+![Architecture Diagram](../01-cloudtrace-load-balanced-app/architecture/Cloud-Trace-Architecture.png.png)
+
 
 ### Key Features
 
