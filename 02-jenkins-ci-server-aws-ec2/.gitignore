@@ -1,0 +1,128 @@
+# ============================================
+# Jenkins CI Server - Git Ignore Rules
+# ============================================
+# This ensures only showcase-safe files are pushed to GitHub
+
+# ============================================
+# CRITICAL: Never commit these security files!
+# ============================================
+*.pem
+*.key
+*.ppk
+*.p12
+*.pfx
+*.crt
+*.cer
+*.jks
+*.keystore
+*-key.pem
+*-Key.pem
+Jenkins-Instance-Key.pem
+vockey.pem
+*.pem.bak
+
+# AWS credentials and config
+.aws/
+aws-credentials.txt
+aws-config.txt
+credentials
+config
+
+
+GIT_SAFETY_CHECKLIST.md
+# ============================================
+# Environment and Configuration Files
+# ============================================
+.env
+.env.local
+.env.*.local
+*.env
+*.env.*
+ENV_CONFIG.txt
+config.txt
+secrets.txt
+
+# ============================================
+# Logs and Temporary Files
+# ============================================
+*.log
+*.tmp
+*.temp
+*.bak
+*.cache
+*.swp
+*.swo
+*~
+
+# ============================================
+# OS Files
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ============================================
+# IDE and Editor Files
+# ============================================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+
+# ============================================
+# Jenkins-specific (if any local files)
+# ============================================
+# Jenkins home directory (if copied locally)
+jenkins_home/
+jenkins-backup/
+*.war
+
+# ============================================
+# Personal Notes and Learning Files
+# ============================================
+# These are for your reference but not needed on GitHub
+notes.txt
+personal-notes.md
+TODO.txt
+learning-notes.md
+
+# ============================================
+# What SHOULD be committed (explicitly allow)
+# ============================================
+# Documentation
+!README.md
+!troubleshooting.md
+
+# Scripts
+!install-jenkins-ubuntu.sh
+
+# Architecture and screenshots
+!architecture/
+!architecture/**
+!screenshots/
+!screenshots/**
+
+# ============================================
+# Notes
+# ============================================
+# ✅ SAFE TO COMMIT:
+#   - README.md
+#   - install-jenkins-ubuntu.sh
+#   - troubleshooting.md
+#   - architecture/ folder (including .png files)
+#   - screenshots/ folder
+#
+# ❌ NEVER COMMIT:
+#   - Any .pem or .key files
+#   - AWS credentials
+#   - Environment variables
+#   - Personal notes
+

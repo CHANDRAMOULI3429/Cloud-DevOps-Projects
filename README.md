@@ -13,4 +13,14 @@ This repository contains **production-grade Cloud & DevOps projects** demonstrat
 - PostgreSQL (RDS)
 - Fault tolerant & horizontally scalable design
 
+### 2️⃣ Jenkins CI Server on AWS EC2
+📂 `02-jenkins-ci-server-aws-ec2/`
+
+- Jenkins CI/CD server deployment on AWS EC2
+- Ubuntu-based infrastructure
+- SSH key-based authentication
+- Systemd service management
+- Automated installation script
+- Real-world troubleshooting documentation
+
 More projects will be added soon.
