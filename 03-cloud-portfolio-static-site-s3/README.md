@@ -78,7 +78,7 @@ User Browser  ---> AWS S3 ---->HTML,CSS,JS(Load)
 ---
 
 ## Live Demo
-🔗 **S3 Website URL:** _<add-your-s3-url-here>_
+🔗 **S3 Website URL:** http://mouli-cloud-portfolio.s3-website.ap-south-1.amazonaws.com/
 
 ---
 
