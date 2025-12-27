@@ -34,16 +34,7 @@ No backend. No frameworks. No build process.
 
 ## Architecture
 
-User Browser
-    |
-    |
-    V
-AWS S3 (Static Website Hosting)
-|
-├── index.html
-├── assets/css
-├── assets/js
-└── assets/data/projects.json
+User Browser  ---> AWS S3 ---->HTML,CSS,JS(Load)
 
 
 ### Key Architecture Decisions
