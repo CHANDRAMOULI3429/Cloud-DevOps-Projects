@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Static Website on AWS S3",
+    "problem": "Deploying a static portfolio website traditionally requires managing servers, configuring web servers, and handling scaling concerns. I wanted to build a production-ready static site that demonstrates cloud infrastructure knowledge while being cost-effective and scalable.",
+    "architecture": "This portfolio is a pure static website hosted on AWS S3 with static website hosting enabled. The architecture leverages S3's durability and scalability, with CloudFront CDN (optional) for global distribution. All assets are served directly from S3 buckets, eliminating the need for compute resources. The site uses vanilla JavaScript to dynamically load project data from a JSON file, making it easy to add new projects without modifying HTML.",
+    "techStack": [
+      "HTML5",
+      "CSS3",
+      "Vanilla JavaScript",
+      "JSON"
+    ],
+    "cloudServices": [
+      "AWS S3 (Static Website Hosting)",
+      "AWS CloudFront (Optional CDN)",
+      "AWS Route 53 (Optional DNS)"
+    ],
+    "keyLearnings": [
+      "Designed and implemented a fully static website architecture",
+      "Configured AWS S3 for static website hosting with proper bucket policies",
+      "Optimized for performance with minimal dependencies and clean code structure",
+      "Implemented dynamic content loading using vanilla JavaScript and JSON",
+      "Ensured SEO-friendly structure with semantic HTML",
+      "Created a scalable architecture that can handle future projects without code changes"
+    ],
+    "githubLink": "https://github.com/yourusername/portfolio-cloud",
+    "liveDemoLink": "https://your-portfolio.s3-website-us-east-1.amazonaws.com",
+    "status": "Completed",
+    "featured": true
+  }
+]
+

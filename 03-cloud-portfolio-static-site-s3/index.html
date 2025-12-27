@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--
+    PORTFOLIO WEBSITE - STATIC SITE ON AWS S3
+    
+    CUSTOMIZATION REQUIRED:
+    1. Update meta tags (author, description, keywords)
+    2. Update hero section: name, role, mission statement
+    3. Update About section with your background
+    4. Update Skills section with your technologies
+    5. Update Contact section: email, GitHub, LinkedIn URLs
+    6. Update footer with your name
+    7. Add projects to assets/data/projects.json
+    
+    See README.md for detailed customization instructions.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of a Software Developer specializing in Cloud & DevOps. Showcasing real-world projects and cloud infrastructure expertise.">
+    <meta name="keywords" content="Software Developer, Cloud Engineer, DevOps, AWS, Portfolio">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Software Developer | Cloud & DevOps Portfolio">
+    <meta property="og:description" content="Showcasing real-world cloud infrastructure projects and software development expertise.">
+    <meta property="og:type" content="website">
+    
+    <title>Software Developer | Cloud & DevOps Portfolio</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Favicon (optional - add later) -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="#hero">Portfolio</a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <!-- Particle Canvas will be inserted here by JavaScript -->
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-name">CHANDRAMOULI S</span>
+                    <span class="hero-role">Software Developer | Cloud & DevOps Enthusiast</span>
+                </h1>
+                <p class="hero-mission">
+                    Building scalable cloud infrastructure and robust software solutions. 
+                    Transitioning from traditional development to cloud-native architectures, 
+                    focused on real-world systems that solve actual problems.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="https://github.com/CHANDRAMOULI3429" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub</a>
+                    <a href="https://www.linkedin.com/in/chandramouli-s-8271bb324" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a software developer with a passion for building systems that matter. 
+                        My journey started with traditional web development, but I quickly realized 
+                        that understanding infrastructure and cloud architecture is essential for 
+                        creating truly scalable solutions.
+                    </p>
+                    <p>
+                        I'm now focused on transitioning into Cloud & DevOps, moving beyond tutorials 
+                        to build real-world projects that demonstrate practical expertise. This portfolio 
+                        itself is my first hosted project—a static website on AWS S3, showcasing my 
+                        understanding of cloud infrastructure fundamentals.
+                    </p>
+                    <p>
+                        My approach is hands-on: I learn by building, deploying, and iterating. 
+                        Every project here represents real work, real challenges, and real solutions—not 
+                        just following along with tutorials.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Programming</h3>
+                    <ul class="skill-list">
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                        <li>TypeScript</li>
+                        <li>Java</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Backend</h3>
+                    <ul class="skill-list">
+                        <li>RESTful APIs</li>
+                        <li>Node.js</li>
+                        <li>Express</li>
+                        <li>Database Design</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Cloud</h3>
+                    <ul class="skill-list">
+                        <li>AWS S3</li>
+                        <li>AWS CloudFront</li>
+                        <li>AWS EC2</li>
+                        <li>AWS Lambda</li>
+                        <li>Infrastructure as Code</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">DevOps</h3>
+                    <ul class="skill-list">
+                        <li>CI/CD</li>
+                        <li>Docker</li>
+                        <li>Git</li>
+                        <li>Linux</li>
+                        <li>Monitoring & Logging</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Tools</h3>
+                    <ul class="skill-list">
+                        <li>VS Code</li>
+                        <li>GitHub</li>
+                        <li>AWS CLI</li>
+                        <li>Terraform</li>
+                        <li>Postman</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">Real-world projects showcasing cloud infrastructure and software development expertise</p>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be dynamically loaded here -->
+                <div class="loading">Loading projects...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Detail Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Project details will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">I'm always open to discussing new opportunities and interesting projects.</p>
+            <div class="contact-content">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:chat2site@gmail.com">chat2site@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">⚡</div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/CHANDRAMOULI3429" target="_blank" rel="noopener noreferrer">@CHANDRAMOULI3429</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🔗</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/chandramouli-s-8271bb324" target="_blank" rel="noopener noreferrer">chandramouli-s</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Your Name. Built with vanilla HTML, CSS, and JavaScript. Hosted on AWS S3.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/projects.js"></script>
+</body>
+</html>
+

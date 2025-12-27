@@ -1,0 +1,249 @@
+/* ============================================
+   Responsive Styles
+   ============================================ */
+
+/* Tablet Styles */
+@media (max-width: 968px) {
+    :root {
+        --container-padding: 1.25rem;
+    }
+    
+    .hero-name {
+        font-size: 2.5rem;
+    }
+    
+    .hero-role {
+        font-size: 1.25rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: var(--spacing-md);
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-md);
+    }
+}
+
+/* Medium Desktop - Keep 5 columns */
+@media (min-width: 969px) and (max-width: 1200px) {
+    .skills-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: var(--spacing-md);
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 1rem;
+        --spacing-2xl: 3rem;
+    }
+    
+    html {
+        scroll-padding-top: 60px;
+    }
+    
+    /* Navigation */
+    .navbar .container {
+        min-height: 60px;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        text-align: center;
+        transition: left var(--transition-base);
+        box-shadow: var(--shadow-lg);
+        padding: var(--spacing-lg) 0;
+        gap: var(--spacing-md);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* Hero */
+    .hero {
+        min-height: calc(100vh - 60px);
+        padding-top: 100px; /* Increased from 60px to prevent name from hiding */
+    }
+    
+    .hero-name {
+        font-size: 2rem;
+    }
+    
+    .hero-role {
+        font-size: 1.125rem;
+    }
+    
+    .hero-mission {
+        font-size: 1rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    /* Sections */
+    section {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .section-title::after {
+        width: 60px;
+        height: 3px;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .project-card {
+        padding: var(--spacing-md);
+    }
+    
+    .project-card-header {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .project-status {
+        align-self: flex-start;
+        margin-left: 0;
+    }
+    
+    /* Skills */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    /* Contact */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    /* Modal */
+    .modal.active {
+        padding: var(--spacing-sm);
+    }
+    
+    .modal-content {
+        max-height: 95vh;
+        border-radius: var(--radius-md);
+    }
+    
+    .modal-body {
+        padding: var(--spacing-lg);
+    }
+    
+    .modal-title {
+        font-size: 1.5rem;
+    }
+    
+    .modal-links {
+        flex-direction: column;
+    }
+    
+    .modal-links .btn {
+        width: 100%;
+    }
+    
+    /* About */
+    .about-text p {
+        font-size: 1rem;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .hero-name {
+        font-size: 1.75rem;
+    }
+    
+    .hero-role {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .project-card-title {
+        font-size: 1.25rem;
+    }
+    
+    .modal-title {
+        font-size: 1.25rem;
+    }
+    
+    .modal-section-title {
+        font-size: 1.125rem;
+    }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1400px) {
+    :root {
+        --container-max-width: 1400px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .hero-cta,
+    .modal,
+    .footer {
+        display: none;
+    }
+    
+    section {
+        page-break-inside: avoid;
+    }
+}
+
